@@ -1,20 +1,29 @@
 # Errors
 
-<aside class="notice">This error section is stored in a separate file in `includes/_errors.md`. Slate allows you to optionally separate out your docs into many files...just save them to the `includes` folder and add them to the top of your `index.md`'s frontmatter. Files are included in the order listed.</aside>
+RepSpark's API uses the following error codes:
 
-The Kittn API uses the following error codes:
-
-
-Error Code | Meaning
----------- | -------
-400 | Bad Request -- Your request sucks
-401 | Unauthorized -- Your API key is wrong
-403 | Forbidden -- The kitten requested is hidden for administrators only
-404 | Not Found -- The specified kitten could not be found
-405 | Method Not Allowed -- You tried to access a kitten with an invalid method
-406 | Not Acceptable -- You requested a format that isn't json
-410 | Gone -- The kitten requested has been removed from our servers
-418 | I'm a teapot
-429 | Too Many Requests -- You're requesting too many kittens! Slow down!
-500 | Internal Server Error -- We had a problem with our server. Try again later.
-503 | Service Unavailable -- We're temporarially offline for maintanance. Please try again later.
+Error Code | RepSpark Error | Reason
+---------- | -------------- | ------
+400 Bad Request | MissingRequiredHeader | {0} header was not specified.
+400 Bad Request | UnsupportedHeader | HTTP header {0} specified in the request is not supported.
+400 Bad Request | UnsupportedQueryParameter | Query parameter {0} specified in the request URI is not supported.
+400 Bad Request | InvalidQueryParameter | Query parameter {0} specified in the request URI is not valid.
+400 Bad Request | InvalidHttpVerb | The HTTP verb specified was not recognized by the server.
+400 Bad Request | InvalidInput | Request input {0} is not valid.
+400 Bad Request | InvalidHeaderValue | The value provided for HTTP header {0} was not valid. Verify the value including the format.
+400 Bad Request | UnsupportedContentType | 	The specified content type is not supported.
+401 Forbidden | MissingAuthenticationInfo | The authentication information was not provided. Verify the value of Authorization header.
+401 Forbidden | InvalidAuthenticationInfo | The authentication information was not provided in the correct format. Verify the value of Authorization header.
+401 Forbidden | AuthenticationFailed | Server failed to authenticate the request. Make sure the value of the Authorization header is formed correctly.
+404 Not Found | ResourceNotFound | The specified resource does not exist.
+404 Not Found | SchemaNotFound | The specified schema does not exist.
+404 Not Found | ProcessorNotFound | The specified processor does not exist.
+404 Not Found | TransactionNotFound | The specified transaction does not exist.
+405 Method Not Allowed | UnsupportedHttpVerb | The resource doesn't support the specified HTTP verb.
+409 Conflict | TransactionAlreadyExists | Transaction with the same token already exists.
+500 Internal Server Error | InternalError | The server encountered an internal error. Please retry the request.
+500 Internal Server Error | OperationTimedOut | The operation could not be completed within the permitted time.
+500 Internal Server Error | UnexpectedErrorOnPreProcessing | Unexpected error occurred on pre-processing.
+500 Internal Server Error | UnexpectedErrorOnProcessing | Unexpected error occurred on processing.
+500 Internal Server Error | UnexpectedErrorOnPostProcessing | Unexpected error occurred on post-processing.
+503 Service Unavailable | ServerBusy | 	The server is currently unable to receive requests. Please retry your request.
