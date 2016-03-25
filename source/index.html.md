@@ -3,6 +3,7 @@ title: RepSpark API Reference
 
 language_tabs:
   - csharp: C#
+  - java: Java
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -20,6 +21,10 @@ search: true
 
 ```csharp
 Console.WriteLine("Relevant code samples look like this!");
+```
+
+```java
+System.out.println("Relevant code samples look like this!");
 ```
 
 This document describes RepSpark's dynamic API and resources. The design of the API is loosely based on RESTful principals with dynamic extensions to handle the evolving nature of integration challenges.
@@ -41,9 +46,57 @@ String url = "https://api.repspark.net/api";
 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
 ```
 
+```java
+// For HTTPS to work properly, please use JDK 7 or 8
+URL url = new URL("https://api.repspark.net/api");
+HttpsURLConnection request = (HttpsURLConnection)url.openConnection();
+```
+
+
+
 <aside class="notice">
 The API is only served over HTTPS to ensure data privacy and security.
 </aside>
+
+## HTTP Verbs
+
+HTTP verbs determine how incoming data should be applied to the provided resources.
+
+> How to set an HTTP verb
+
+```csharp
+// HttpWebRequest request defined above
+request.Method = "POST";
+```
+
+```java
+// HttpsURLConnection request defined above
+request.setRequestMethod("POST");
+```
+
+Almost all of RepSpark's resources require the `POST` verb, which specifies the creation of new data. We chose this verb because its definition aligns with the intention of most requests.
+
+<aside class="notice">
+The only two resources that require the `GET` verb are `Order` and `SimpleOrder`.
+</aside>
+
+## HTTP Headers
+
+> How to set an HTTP header
+
+```csharp
+// HttpWebRequest request defined above
+request.Headers.add("HeaderName", "HeaderValue");
+```
+
+```java
+// HttpsURLConnection request defined above
+request.setRequestProperty("HeaderName", "HeaderValue");
+```
+
+RepSpark's API uses HTTP headers to precisely configure each request.  
+
+Individual headers have detailed descriptions in the follow sections.
 
 # Credentials
 
@@ -71,7 +124,20 @@ String devToken = "88014bc7-01f2-41d6-8da0-27dca921d601";
 String usernameAndPassword = clientKey + ":" + devToken;
 byte[] bytes = System.Text.Encoding.UTF8.GetBytes(usernameAndPassword);
 String base64String = System.Convert.ToBase64String(bytes);
-String authHeader = "Authorization: Basic " + base64String;
+// HttpWebRequest request defined above
+request.Headers.add("Authentication", "Basic " + base64String);
+```
+
+```java
+String clientKey = "491d3d6e-7f0a-472d-bde5-b01b61d1f57e";
+String devToken = "88014bc7-01f2-41d6-8da0-27dca921d601";
+String usernameAndPassword = clientKey + ":" + devToken;
+byte[] bytes = usernameAndPassword.getBytes("UTF-8");
+// Java 8 only
+java.util.Base64.Encoder encoder = java.util.Base64.getEncoder();
+String base64String = encoder.encode(bytes);
+// HttpsURLConnection request defined above
+request.setRequestProperty("Authentication", "Basic " + base64String);
 ```
 
 `Authorization: Basic NDkxZDNkNmUtN….`
@@ -84,6 +150,10 @@ Despite the insecure nature of basic authentication, our required use of HTTPS l
 
 ```csharp
 String guid = System.Guid.NewGuid().ToString();
+```
+
+```java
+String guid = java.util.UUID.randomUUID();
 ```
 
 `X-RepSpark-TransactionToken: <TOKENSTRING>`
@@ -192,9 +262,9 @@ The API has the following sub resources. Details are described in this documenta
 
 ## Sales
 
-- Order
+- Order `GET`
 - OrderConfirmation
-- SimpleOrder
+- SimpleOrder `GET`
 
 ## Stock
 

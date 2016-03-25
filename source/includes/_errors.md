@@ -1,9 +1,10 @@
-# Errors
+# Response Codes
 
-RepSpark's API uses the following error codes:
+RepSpark's API uses the following response codes:
 
-Error Code | RepSpark Error | Reason
+Response Code | RepSpark Code | Message
 ---------- | -------------- | ------
+200 OK | OK | Success
 400 Bad Request | MissingRequiredHeader | {0} header was not specified.
 400 Bad Request | UnsupportedHeader | HTTP header {0} specified in the request is not supported.
 400 Bad Request | UnsupportedQueryParameter | Query parameter {0} specified in the request URI is not supported.
