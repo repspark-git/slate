@@ -1,10 +1,13 @@
 # Response Codes
 
+Every request will be followed by a response. Some of these responses have specific messages to aide in debugging. Extra details will appear in place of the `{0}` notation.
+
 RepSpark's API uses the following response codes:
 
 Response Code | RepSpark Code | Message
 ---------- | -------------- | ------
 200 OK | OK | Success
+301 Permanently Moved | PermanentlyMoved | Please change HTTP requests to HTTPS requests.
 400 Bad Request | MissingRequiredHeader | {0} header was not specified.
 400 Bad Request | UnsupportedHeader | HTTP header {0} specified in the request is not supported.
 400 Bad Request | UnsupportedQueryParameter | Query parameter {0} specified in the request URI is not supported.

@@ -628,3 +628,53 @@ html, body {
 .highlight, .highlight .w {
   background-color: $code-bg;
 }
+
+.label-default {
+    color: #939da3;
+}
+.label-warning {
+    color: #ffae54;
+    text-transform: uppercase;
+}
+.label {
+    font-size: 75%;
+    font-weight: 600;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.prettyprint.lightgray {
+  color: #fff;
+  background-color: #D3D3D3;
+}
+
+.prettyprint.lightblue {
+  color: #fff;
+  background-color: #ADD8E6;
+}
+
+.prettyprint.yellow {
+  color: #fff;
+  background-color: #FFD700;
+}
+
+.prettyprint.green {
+  color: #fff;
+  background-color: #00B200;
+}
+
+.prettyprint.pink {
+  color: #fff;
+  background-color: #FF69B4;
+}
+
+.prettyprint.white {
+  color: #000;
+  background-color: #fff;
+}
+
+.prettyprint.red {
+  color: #fff;
+  background-color: #B70000;
+}

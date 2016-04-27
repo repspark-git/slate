@@ -1,0 +1,387 @@
+{
+  "title": "Customer",
+  "type": "object",
+  "properties": {
+    "BrandCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "DivisionCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "CustomerCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "StoreCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 50,
+      "format": "string"
+    },
+    "DBA": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 80,
+      "format": "string"
+    },
+    "Address1": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 150,
+      "format": "string"
+    },
+    "Address2": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 150,
+      "format": "string"
+    },
+    "City": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 50,
+      "format": "string"
+    },
+    "State": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 25,
+      "format": "string"
+    },
+    "Zip": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "Country": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 25,
+      "format": "string"
+    },
+    "Name": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 80,
+      "format": "string"
+    },
+    "PhoneNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 25,
+      "format": "string"
+    },
+    "FaxNumber": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 25,
+      "format": "string"
+    },
+    "SalesPersonCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "ShippingMethodCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "DiscountPercentage": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "format": "decimal(18, 4)"
+    },
+    "TermsCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "TypeCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "PricePlanCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "BuyingGroupCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 100,
+      "format": "string"
+    },
+    "CurrencyCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "CreditStatusCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "ChannelCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "ClassificationCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "CustomerGroupCode": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "maxLength": 15,
+      "format": "string"
+    },
+    "Enabled": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "default": true,
+      "format": "bool"
+    },
+    "IsBillTo": {
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "default": true,
+      "format": "bool"
+    },
+    "CommissionPercentage": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "default": 0,
+      "format": "decimal"
+    },
+    "CustomerLimits": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "BrandCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "format": "string"
+          },
+          "DivisionCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "format": "string"
+          },
+          "SeasonCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "format": "string"
+          },
+          "GenderCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "format": "string"
+          },
+          "LocationCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 10,
+            "format": "string"
+          }
+        }
+      }
+    },
+    "Extensions": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "ElementType": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 50,
+            "format": "string"
+          },
+          "Value": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 255,
+            "format": "string"
+          }
+        },
+        "required": [
+          "ElementType",
+          "Value"
+        ]
+      }
+    },
+    "Users": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": [
+          "object",
+          "null"
+        ],
+        "properties": {
+          "UserCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 15,
+            "format": "string"
+          },
+          "UserDescription": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 50,
+            "format": "string"
+          },
+          "HierarchyLevelCode": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 15,
+            "format": "string"
+          },
+          "HierarchyLevelDescription": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 50,
+            "format": "string"
+          },
+          "CommissionPercent": {
+            "type": [
+              "number",
+              "null"
+            ],
+            "default": 0,
+            "format": "decimal"
+          }
+        },
+        "required": [
+          "UserCode"
+        ]
+      }
+    }
+  },
+  "required": [
+    "CustomerCode",
+    "Address1",
+    "Name"
+  ]
+}
