@@ -735,6 +735,26 @@ Loading...
   Loading...
 </p>
 
+## Order Confirmation
+
+> Example:
+
+```json
+[
+  {
+    "RepSparkOrderNumber": "RepSparkOrderNumber",
+    "ErpOrderNumber": "ErpOrderNumber",
+    "ErrorMessage": ""
+  }
+]
+```
+
+[Payload schema](../schemas/OrderConfirmation.schema.json):
+
+<p class="json-formatter" data-url="../schemas/OrderConfirmation.schema.json">
+  Loading...
+</p>
+
 ## Order Item Report
 
 > Example:
